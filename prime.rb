@@ -1,8 +1,9 @@
-def prime?(integer)
-  test_divisors = (2..(integer - 1)).to_a
-if test_divisors.any? ({|divisor| integer % divisor == 0})|| (integer == 0 || integer == 1)
-  false
-else
-  true
-end
+def prime?(number)
+  if number >= 2
+    (2..number - 1).all? do |x|
+      number % x != 0
+    end
+  else
+    return false
+  end
 end
